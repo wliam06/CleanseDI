@@ -21,6 +21,4 @@ struct StoryViewModel {
         let urlDriver = Driver.just(URL(string: story.url ?? ""))
         self.output = Output(title: titleDriver, url: urlDriver)
     }
-    
 }
-

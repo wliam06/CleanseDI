@@ -34,7 +34,6 @@ class TopStoriesViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupViewModel()
-        print("HERE TOP STORIES VIEW CONTROLLER")
     }
 }
 
@@ -59,14 +58,12 @@ fileprivate extension TopStoriesViewController {
                 strongSelf.tableView.deselectRow(at: zipped.1, animated: true)
                 let viewController = strongSelf.storyFactory.build(zipped.0)
                 strongSelf.navigationController?.pushViewController(viewController, animated: true)
-            })
+            }).disposed(by: self.disposeBag)
     }
 }
 
 extension TopStoriesViewController {
-    
     struct Module: Cleanse.Module {
-        
         static func configure(binder: UnscopedBinder) {
             binder
                 .bind(TopStoriesViewModel.self)
@@ -81,7 +78,5 @@ extension TopStoriesViewController {
                                                                                                storyFactory: factory))
                 })
         }
-        
     }
-    
 }

@@ -9,16 +9,13 @@ import Foundation
 import Cleanse
 
 public struct UIKitModule: Module {
-    
     public static func configure(binder: Binder<Unscoped>) {
         binder.include(module: UIScreen.Module.self)
         binder.include(module: UIWindow.Module.self)
     }
-    
 }
 
 extension UIScreen {
-    
     public struct Module: Cleanse.Module {
         public static func configure(binder: Binder<Unscoped>) {
             binder
@@ -26,11 +23,9 @@ extension UIScreen {
                 .to { UIScreen.main }
         }
     }
-    
 }
 
 extension UIWindow {
-    
     public struct Module: Cleanse.Module {
         public static func configure(binder: Binder<Unscoped>) {
             binder
@@ -42,7 +37,6 @@ extension UIWindow {
                 }
         }
     }
-    
 }
 
 extension UIViewController {

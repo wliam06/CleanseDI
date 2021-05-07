@@ -10,7 +10,6 @@ import Cleanse
 import Alamofire
 
 struct NetworkModule: Module {
-    
     static func configure(binder: SingletonBinder) {
         binder
             .bind()

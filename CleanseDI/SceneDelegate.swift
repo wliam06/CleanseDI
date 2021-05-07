@@ -10,7 +10,6 @@ import Cleanse
 import AlamofireNetworkActivityLogger
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
     var componentFactory: ComponentFactory<MainComponent>?
     var componentFactoryInjector: PropertyInjector<SceneDelegate>?
@@ -21,8 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         setupNetwork()
         setupApplication(windowScene: windowScene)
-        // Make sure everything went according to plan
-//        precondition(window != nil)
+        precondition(window != nil)
         window?.makeKeyAndVisible()
     }
 }

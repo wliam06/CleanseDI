@@ -7,7 +7,7 @@
 
 import Cleanse
 
-struct CoreAppModule: Cleanse.Module {
+struct CoreAppModule: Module {
     static func configure(binder: SingletonBinder) {
         binder.include(module: MainTabBar.Module.self)
         binder.include(module: TopStoriesViewController.Module.self)
